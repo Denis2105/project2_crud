@@ -1,13 +1,18 @@
 <h1>Dbargainz</h1>
 
+<!-- Index page where all deals are shown regardless of logged in or logged out -->
 <% if logged_in? %>
+
   <a href="/deals/new">add new deal</a>
   <% @deals.each do |deal| %>
 
   <!-- = is like a puts function -->
   <h2><%= deal['name'] %></h2>
+
   <!-- 'image url' taken from sql code we already keyed in earlier and has to be in an img tag -->
-  <!-- <img src="<%= deal['image_url'] %>" alt=""> -->
+
+  <img src="<%= deal['image_url'] %>" alt="">
+
   <a href= "/deals/<%= deal['id'] %>">details</a>
   <% end %>
 <% end %>

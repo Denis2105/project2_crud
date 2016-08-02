@@ -1,0 +1,18 @@
+<form action="/deals/<%= @deal.id %>" method="post">
+
+  <input type="hidden" name="_method" value="put">
+
+  <label for="name">name</label>
+  <input type="text" name="name" value="<%= @deal.name %>">
+
+  <label for="image_url">image url</label>
+  <input type="text" name=image_url value="<%= @deal.image_url %>">
+
+  <label for="description">description</label>
+  <textarea name="description" rows="5" cols="30" value="<%= @deal.description %>"></textarea>
+
+  <label for="url">url</label>
+  <input type="text" name="url" value="<%= @deal.url %>">
+
+  <button>update</button>
+</form>

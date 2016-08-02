@@ -47,13 +47,38 @@ post '/deal/new' do
   deal = Deal.new
   deal.name = params[:name]
   deal.image_url = params[:image_url]
-  deal.description = params[:desciption]
+  deal.description = params[:description]
   deal.url = params[:url]
   deal.save
   redirect to '/'
 
   # after you get current user working
   # current_user << deal
+end
+
+get '/deals/:id' do
+ @deal = Deal.find(params[:id])
+
+  erb :show
+end
+
+get '/deals/:id/edit' do
+  @deal = Deal.find(params[:id])
+
+  erb :edit
+
+end
+
+put '/deals/:id' do
+  deal = Deal.find(params[:id])
+  deal.name = params[:name]
+  deal.image_url = params[:image_url]
+  deal.description = params[:description]
+  deal.url = params[:url]
+  deal.save
+
+  redirect to "/deals/#{ params[ :id] }"
+
 end
 
 get '/session/new' do #getting the form
