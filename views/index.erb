@@ -1,0 +1,13 @@
+<h1>Dbargainz</h1>
+
+<% if logged_in? %>
+  <a href="/deals/new">add new deal</a>
+  <% @deals.each do |deal| %>
+
+  <!-- = is like a puts function -->
+  <h2><%= deal['name'] %></h2>
+  <!-- 'image url' taken from sql code we already keyed in earlier and has to be in an img tag -->
+  <!-- <img src="<%= deal['image_url'] %>" alt=""> -->
+  <a href= "/deals/<%= deal['id'] %>">details</a>
+  <% end %>
+<% end %>
