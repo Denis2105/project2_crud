@@ -35,7 +35,11 @@ get '/signup' do
 end
 
 post '/signup' do
-
+  user = User.new
+  user.email = params[:email]
+  user.password = params[:password]
+  user.save
+  redirect to '/'
 end
 
 # routes for new users to add new deals
@@ -98,8 +102,12 @@ post '/session' do #creating the resource
     session[:user_id] = user.id
     redirect to '/'
   else
-
     #show the login template
     erb :login
   end
+end
+
+delete '/session' do
+  session[:user_id] = nil
+  redirect to '/'
 end

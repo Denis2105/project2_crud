@@ -1,18 +1,44 @@
-<h1>Dbargainz</h1>
+<nav id = "index-nav"
+  <h1>Dbargainz</h1>
+    <form action="/session" method="post">
 
-<!-- Index page where all deals are shown regardless of logged in or logged out -->
-<% if logged_in? %>
+    <label for="email">email</label>
+    <input type="text" name="email">
 
-  <a href="/deals/new">add new deal</a>
-  <% @deals.each do |deal| %>
+    <label for="password">password</label>
+    <input type="password" name="password">
 
-  <!-- = is like a puts function -->
-  <h2><%= deal['name'] %></h2>
+    <button>Login</button>
+  </form>
+</nav>
 
-  <!-- 'image url' taken from sql code we already keyed in earlier and has to be in an img tag -->
 
-  <img src="<%= deal['image_url'] %>" alt="">
+<% if logged_in?%>
+    <form action="/session" class="" method="post">
+    <input type="hidden" name="_method" value="delete">
+        <button> logout</button>
+    </form>
+<% else%>
+<h1> <%= session[:user_id] %></h1>
+<% end %>
 
-  <a href= "/deals/<%= deal['id'] %>">details</a>
-  <% end %>
+  <!-- if not logged in stuff -->
+
+<form action="/signup" method="get">
+
+  <button>Sign Me Up</button>
+</form>
+
+
+
+<% @deals.each do |deal| %>
+
+    <!-- = is like a puts function -->
+<h2><%= deal['name'] %></h2>
+
+    <!-- 'image url' taken from sql code we already keyed in earlier and has to be in an img tag -->
+
+<img src="<%= deal['image_url'] %>" alt="">
+
+<a href= "/deals/<%= deal['id'] %>">details</a>
 <% end %>
