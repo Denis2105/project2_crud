@@ -2,17 +2,24 @@
 
   <input type="hidden" name="_method" value="put">
 
-  <label for="name">name</label>
+  <label for="name">Name</label>
   <input type="text" name="name" value="<%= @deal.name %>">
 
-  <label for="image_url">image url</label>
+  <label for="image_url">Image url</label>
   <input type="text" name=image_url value="<%= @deal.image_url %>">
 
-  <label for="description">description</label>
+  <label for="description">Description</label>
   <textarea name="description" rows="5" cols="30" value="<%= @deal.description %>"></textarea>
 
-  <label for="url">url</label>
+  <label for="url">URL</label>
   <input type="text" name="url" value="<%= @deal.url %>">
 
-  <button>update</button>
+  <button>Update</button>
+</form>
+
+<form action="/deals/<%= @deal.id %>" method="post">
+
+  <input type="hidden" name="_method" value="delete">
+  <button>Delete this awesome deal</button>
+
 </form>

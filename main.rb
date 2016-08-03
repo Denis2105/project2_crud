@@ -44,6 +44,9 @@ end
 
 # routes for new users to add new deals
 get '/deal/new' do
+  if !logged_in?
+    redirect to '/'
+  end
   erb :new
 end
 
@@ -53,6 +56,7 @@ post '/deal/new' do
   deal.image_url = params[:image_url]
   deal.description = params[:description]
   deal.url = params[:url]
+  deal.user_id = session[:user_id]
   deal.save
   redirect to '/'
 
@@ -70,7 +74,6 @@ get '/deals/:id/edit' do
   @deal = Deal.find(params[:id])
 
   erb :edit
-
 end
 
 put '/deals/:id' do
@@ -82,27 +85,31 @@ put '/deals/:id' do
   deal.save
 
   redirect to "/deals/#{ params[ :id] }"
-
 end
 
-get '/session/new' do #getting the form
+delete '/deals/:id' do
+  deal = Deal.find_by(id: params[:id])
+  deal.destroy
+  redirect to '/'
+end
+
+get '/session/new' do
   erb :login
 end
 
-post '/session' do #creating the resource
+post '/session' do
 
   # find the User with the email
   user = User.find_by(email: params[:email])
 
-  # check the password to user
+  # match the password to user
   if user && user.authenticate(params[:password])
 
-    # good to go
     # sessions keep users IN session when they continue browsing from page to page
     session[:user_id] = user.id
     redirect to '/'
   else
-    #show the login template
+    #show the failed login template and re-login
     erb :login
   end
 end
