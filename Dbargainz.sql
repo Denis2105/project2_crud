@@ -9,11 +9,9 @@ create table users(
 
 create table deals(
   id serial4 primary key,
-  user_id varchar(100),
-  name varchar(100),
-  image_url varchar(300),
-  description varchar(500),
-  url varchar(300),
-  upvotes integer,
-  downvotes integer
+  user_id varchar(500),
+  name varchar(500),
+  image_url varchar(1000),
+  description varchar(5000),
+  url varchar(1000)
 );

@@ -60,8 +60,6 @@ post '/deal/new' do
   deal.save
   redirect to '/'
 
-  # after you get current user working
-  # current_user << deal
 end
 
 get '/deals/:id' do

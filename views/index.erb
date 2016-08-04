@@ -1,84 +1,31 @@
 
-<div class = "wrapper">
-  <div class = "navBar">
-    <div class = "logo">
-
-    </div>
-
-    <div class = "navBarButtons">
-
-    </div>
+<div class = "dealTitle">
 
   </div>
 
-  <div class = "content">
+  <div class = "deals">
+      <% @deals.each do |deal| %>
 
-    <div class = "dealTitle">
+        <div class = "dealImage">
 
-    </div>
+          <img src="<%= deal['image_url'] %>" alt="">
 
-    <div class = "deals">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
+        </div>
+
+        <div class = "dealDescription">
+
+          <h2><%= deal['name'] %></h2>
+
+          <p><%= deal.description %></p>
+
+          <a href= "/deals/<%= deal['id'] %>">details</a>
+
+        </div>
+
+        <hr>
+
+      <% end %>
+      
   </div>
 
-  <div clas = "footer">
-
-  </div>
 </div>
-
-<!-- <nav id = "index-nav"> -->
-
-  <h1>Dbargainz</h1>
-  <% if !logged_in?%>
-    <form action="/session" method="post">
-
-      <label for="email">email</label>
-      <input type="text" name="email">
-
-      <label for="password">password</label>
-      <input type="password" name="password">
-
-      <button>Login</button>
-
-    </form>
-  <% end %>
-<!-- </nav> -->
-
-<% if logged_in? %>
-  <form action="/session" class="" method="post">
-
-    <input type="hidden" name="_method" value="delete">
-    <button>Logout</button>
-
-  </form>
-<% end %>
-
-<% if !logged_in? %>
-  <form action="/signup" method="get">
-
-    <button>Sign Me Up</button>
-
-  </form>
-<% end %>
-
-<% if logged_in? %>
-  <form action="/deal/new" method="get">
-
-    <button>Post Deal</button>
-
-  </form>
-<% end %>
-
-<% @deals.each do |deal| %>
-
-  <h2><%= deal['name'] %></h2>
-
-  <img src="<%= deal['image_url'] %>" alt="">
-
-  <a href= "/deals/<%= deal['id'] %>">details</a>
-
-<% end %>
