@@ -1,11 +1,24 @@
+html {
+  height: 100%;
+}
+
 img {
   width : 200px;
 }
 
-/*body {
-  background-color : rgb(107, 6, 6);
+body {
+  background-color : rgb(227, 219, 219);
+  height: 100%;
+  margin: 0px;
 }
 
 nav {
   background-color: rgb(182, 149, 6)
-}*/
+}
+
+.wrapper {
+  width: 1000px;
+  margin: 0 auto;
+  background-color: red;
+  min-height: 100%
+}
