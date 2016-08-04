@@ -14,18 +14,17 @@
 
         <div class = "dealDescription">
 
-          <h2><%= deal['name'] %></h2>
-
+          <a href= "/deals/<%= deal['id'] %>"><h2><%= deal['name'] %></h2></a>
+          
           <p><%= deal.description %></p>
 
-          <a href= "/deals/<%= deal['id'] %>">details</a>
 
         </div>
 
         <hr>
 
       <% end %>
-      
+
   </div>
 
 </div>
