@@ -118,3 +118,30 @@ delete '/session' do
   session[:user_id] = nil
   redirect to '/'
 end
+
+get '/my_deals' do
+  @deals = current_user.deals
+  erb :my_deals
+end
+
+get '/my_account/edit' do
+ @user = User.find_by(id: session[:user_id])
+
+  erb :my_account
+end
+
+post '/my_account/edit' do
+  user = User.find_by(id: session[:user_id])
+  user.email = params[:email]
+  user.password = params[:password]
+  user.save
+  redirect to '/'
+end
+
+
+delete '/my_account/edit' do
+  user_destroy = User.find_by(id: session[:user_id])
+  user_destroy.destroy
+  session[:user_id] = nil
+  redirect to '/'
+end

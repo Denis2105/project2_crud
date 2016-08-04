@@ -6,5 +6,9 @@
 
 <a href="<%= @deal['url'] %>">Link me up to this awesome deal</a>
 
+<% if @deal['user_id'] == session[:user_id].to_s %>
+
 <p><a href="/deals/<%= @deal ['id']
  %>/edit"><button>Edit</button></a><p>
+
+<% end %>

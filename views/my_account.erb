@@ -1,0 +1,19 @@
+<form action="/my_account/edit" method="post">
+
+  <input type="hidden" name="_method" value="put">
+
+  <label for="email">email</label>
+  <input type="text" name="email" value="<%= @user['email'] %>">
+
+  <label for="password">password</label>
+  <input type="password" name="password">
+
+  <button>Update Account</button>
+</form>
+
+<form action="/my_account/edit" method="post">
+
+  <input type="hidden" name="_method" value="delete">
+  <button>Delete this account</button>
+
+</form>

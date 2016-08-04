@@ -1,0 +1,11 @@
+<h1>My deals</h1>
+
+<% @deals.each do |deal| %>
+
+  <p><%= deal.name %></p>
+
+  <img src="<%= deal.image_url %>" alt="">
+
+  <p><%= deal.description %></p>
+
+<% end %>
