@@ -37,4 +37,4 @@ https://gist.github.com/HMAN1911/07dbef3b02d38161b93b867bb676e754
 
 ##6.  Installation/Startup Instructions
 
-Instructions for use are straightforward.  Simply direct your browser to the application URL and load the page.  You will have the option to Sign up, Log In, or just browse deals.  As a registered user you will have the option to create, edit, or delete deals and upload pictures/links. It is similar in style to oZbargains.
+Instructions for use are straightforward.  Simply click on https://dbargainz.herokuapp.com/.  You will have the option to Sign up, Log In, or just browse deals.  As a registered user you will have the option to create, edit, or delete deals and upload pictures/links. It is similar in style to oZbargains.
