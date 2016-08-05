@@ -1,14 +1,26 @@
-<h2><%= @deal['name'] %></h2>
 
-<img src="<%= @deal['image_url'] %>" alt="">
+<div class = "dealImage">
 
-<p><%= @deal['description'] %></p>
+  <img src="<%= @deal['image_url'] %>" alt="">
 
-<a href="<%= @deal['url'] %>">Link me up to this awesome deal</a>
+</div>
 
-<% if @deal['user_id'] == session[:user_id].to_s %>
+<div class = "dealDescription">
+  <h2><%= @deal['name'] %></h2>
 
-<p><a href="/deals/<%= @deal ['id']
- %>/edit"><button>Edit</button></a><p>
+  <p><%= @deal['description'] %></p>
 
-<% end %>
+  <div class = "linkMeUp">
+
+    <a href="<%= @deal['url'] %>">Link me up to this awesome deal</a>
+
+  </div>
+
+  <% if @deal['user_id'] == session[:user_id].to_s %>
+
+  <a href="/deals/<%= @deal ['id']
+   %>/edit"><button>Edit</button></a>
+
+  <% end %>
+
+</div>

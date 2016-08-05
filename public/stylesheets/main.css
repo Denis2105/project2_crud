@@ -1,3 +1,5 @@
+/* Fonts */
+
 * {
   box-sizing  : border-box;
   font-family : 'Roboto',
@@ -5,31 +7,31 @@
 }
 
 a {
-  text-decoration: none;
-  color: rgb(179, 118, 0)
+  color           : rgb(179, 118, 0);
+  text-decoration : none;
 }
 
 a > :hover {
-  text-decoration: underline;
+  text-decoration : underline;
 }
 
 h1 {
-  margin-top : 0px;
-  padding    : 0px;
-  color      : rgb(0, 0, 0);
-  text-align : left;
-  font-size  : 2em;
-  font-weight: 300;
+  margin-top  : 0px;
+  padding     : 0px;
+  color       : rgb(0, 0, 0);
+  text-align  : left;
+  font-size   : 2em;
+  font-weight : 300;
 }
 
 h5 {
-  margin-top : 0px;
-  padding    : 0px;
-  color      : rgb(0, 0, 0);
-  text-align : left;
-  font-style: oblique;
-  font-weight: 300;
-  padding-left: 40px;
+  margin-top   : 0px;
+  padding      : 0px;
+  padding-left : 40px;
+  color        : rgb(0, 0, 0);
+  text-align   : left;
+  font-style   : oblique;
+  font-weight  : 300;
 }
 
 html {
@@ -47,12 +49,12 @@ hr {
 body {
   height           : 100%;
   margin           : 0px;
-  background-color : rgb(221, 221, 221);
+  background-color : rgb(23, 23, 23);
 }
 
 span.color-1 {
-  color : rgb(250, 0, 0);
-  font-weight: 700;;
+  color       : rgb(250, 0, 0);
+  font-weight : 700;
 }
 
 .nav_btn {
@@ -60,8 +62,8 @@ span.color-1 {
 }
 
 .nav_btn > button {
-  height           : 60px;
-  padding          : 0px 20px 0px 20px;
+  height           : 40px;
+  padding          : 10px 20px 0px 20px;
   color            : black;
   border-top       : 0px;
   border-right     : 0px;
@@ -136,7 +138,6 @@ video#bgvid {
   width      : 70%;
   margin     : 20px 0px 40px 0px;
   text-align : right;
-  /* background-color: rgb(182, 149, 6); */
 }
 
 .content {
@@ -150,9 +151,10 @@ video#bgvid {
   height           : 10px;
   margin           : 30px auto;
   padding          : 25px 0px 25px 0px;
-  background-color : rgba(34, 34, 34, 1);
   color            : white;
+  background-color : rgba(38, 96, 164, 1);
   text-align       : center;
+  font-size        : 12px;
 }
 
 .navBar > a {
@@ -165,16 +167,65 @@ video#bgvid {
 }
 
 .dealImage {
-  display: inline-block;
-  width: 25%;
-  vertical-align: top;
-  padding-top: 35px;;
-  padding-left: 30px;
+  display        : inline-block;
+  width          : 25%;
+  padding-top    : 35px;
+  vertical-align : top;
 }
 
 .dealDescription {
-  display: inline-block;
+  display      : inline-block;
+  width        : 70%;
+  margin       : auto;
+  padding-left : 50px;
+}
+
+.linkMeUp > a {
+  color : rgb(38, 96, 164);
+}
+
+#createDeal > form > p > label {
+  display      : inline-block;
+  width        : 35%;
+  margin-top   : 5px;
+  padding-left : 40px;
+  vertical-align: top;
+
+}
+
+#createDeal > form > p > input {
+  display : inline-block;
+  width   : 60%;
+  height  : 30px;
+}
+
+#createDeal button {
   margin: auto;
-  width: 70%;
-  padding-left: 50px;
+}
+
+#createDeal {
+  width        : 50%;
+  padding      : 1%;
+  padding-left : 3%;
+  opacity      : 0.7%;
+  text-align   : left;
+
+}
+
+button {
+  height           : 40px;
+  padding          : 10px 20px 0px 20px;
+  color            : black;
+  border-top       : 0px;
+  border-right     : 0px;
+  border-bottom    : 4px solid rgba(255, 255, 255, 0);
+  border-left      : 0px;
+  background-color : rgba(255, 255, 255, 0);
+  font-size        : 0.8em;
+  transition       : border-bottom 1.5s;
+}
+
+button:hover {
+  border-bottom : 4px solid rgb(250, 0, 0);
+  text-decoration: none;
 }

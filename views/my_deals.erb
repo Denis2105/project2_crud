@@ -2,12 +2,20 @@
 
 <% @deals.each do |deal| %>
 
-  <p><%= deal.name %></p>
-
+<div class = "dealImage">
   <img src="<%= deal.image_url %>" alt="">
+</div>
+
+<div class = "dealDescription">
+
+  <h2><%= deal.name %></h2>
 
   <p><%= deal.description %></p>
 
-  <p><a href="/deals/<%= deal['id'].to_i %>/edit"><button>Edit</button></a><p>
+  <a href="/deals/<%= deal['id'].to_i %>/edit"><button>Edit</button></a>
+
+</div>
+
+<hr>
 
 <% end %>
