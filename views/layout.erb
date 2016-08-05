@@ -1,32 +1,37 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>dBargainz!</title>
   <link rel='stylesheet' href='/stylesheets/main.css'>
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic" rel="stylesheet" type="text/css">
 </head>
+
 <body>
 
   <div class = "wrapper">
 
     <div id="video_holder">
       <div class="overlay">
-
       </div>
+
       <video playsinline autoplay muted loop id="bgvid">
         <source src="/video/cartVid.mp4" type="video/mp4">
       </video>
     </div>
 
-
     <div class = "navBar">
+
       <a href="/">
         <div class = "logo">
+
           <h1>d<span class="color-1">Bargainz!</span></h1>
           <h5>Bargains too good to resist...</h5>
+
         </div>
       </a>
+
       <div class = "navBarButtons">
 
         <% if !logged_in?%>
@@ -47,17 +52,22 @@
           <form action="/my_deals" method="get" class="nav_btn">
             <button>Greetings <%= current_user.email %>! </button>
           </form>
+
           <form action="/my_deals" method="get" class="nav_btn">
             <button>My Deals</button>
           </form>
+
           <form action="/deal/new" method="get" class="nav_btn">
             <button>Post Deal</button>
           </form>
+
           <form action="/my_account/edit" method="get" class="nav_btn">
             <button>My Account</button>
           </form>
+
           <form action="/session" method="post" class="nav_btn">
             <input type="hidden" name="_method" value="delete">
+
             <button>Logout</button>
           </form>
         <% end %>
@@ -65,6 +75,7 @@
         <% if !logged_in? %>
 
           <form action="/signup" method="get" class="nav_btn">
+            
             <button>Sign Me Up!</button>
           </form>
 

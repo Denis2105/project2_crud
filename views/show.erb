@@ -6,6 +6,7 @@
 </div>
 
 <div class = "dealDescription">
+
   <h2><%= @deal['name'] %></h2>
 
   <p><%= @deal['description'] %></p>
@@ -18,8 +19,7 @@
 
   <% if @deal['user_id'] == session[:user_id].to_s %>
 
-  <a href="/deals/<%= @deal ['id']
-   %>/edit"><button>Edit</button></a>
+  <a href="/deals/<%= @deal ['id'] %>/edit"><button>Edit</button></a>
 
   <% end %>
 

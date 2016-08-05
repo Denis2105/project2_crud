@@ -25,7 +25,6 @@ helpers do
 end
 
 get '/' do
-
   @deals = Deal.all
   erb :index
 end
@@ -59,18 +58,15 @@ post '/deal/new' do
   deal.user_id = session[:user_id]
   deal.save
   redirect to '/'
-
 end
 
 get '/deals/:id' do
  @deal = Deal.find(params[:id])
-
   erb :show
 end
 
 get '/deals/:id/edit' do
   @deal = Deal.find(params[:id])
-
   erb :edit
 end
 
@@ -81,7 +77,6 @@ put '/deals/:id' do
   deal.description = params[:description]
   deal.url = params[:url]
   deal.save
-
   redirect to "/deals/#{ params[ :id] }"
 end
 
@@ -119,6 +114,7 @@ end
 
 get '/my_deals' do
   @deals = current_user.deals
+  
   erb :my_deals
 end
 
