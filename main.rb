@@ -1,6 +1,5 @@
 
 require 'sinatra'
-require 'sinatra/reloader'
 require 'pg'
 require 'pry'
 
@@ -114,7 +113,7 @@ end
 
 get '/my_deals' do
   @deals = current_user.deals
-  
+
   erb :my_deals
 end
 
